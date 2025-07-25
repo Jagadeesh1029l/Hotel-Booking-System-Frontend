@@ -1,0 +1,349 @@
+ body {
+   font-family: 'Poppins', sans-serif;
+   color: var(--text-color);
+   scroll-behavior: smooth;
+   overflow-x: hidden;
+ }
+
+ /* Header Styles */
+ .navbar {
+   background-color: rgba(255, 255, 255, 0.95);
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   transition: all 0.3s ease;
+ }
+
+ .navbar-brand {
+   font-weight: 700;
+   font-size: 1.8rem;
+   color: var(--primary-color);
+ }
+
+ .nav-link {
+   font-weight: 500;
+   color: var(--text-color);
+   margin: 0 10px;
+   transition: color 0.3s;
+ }
+
+ .nav-link:hover {
+   color: var(--secondary-color);
+ }
+
+ .nav-link.active {
+   color: var(--secondary-color);
+   font-weight: 600;
+ }
+
+ /* Hero Section */
+ #hero {
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+     url('https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_1280.jpg');
+   background-size: cover;
+   background-position: center;
+   min-height: 80vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: var(--white);
+   text-align: center;
+   padding: 2rem;
+ }
+
+ .hero-content h1 {
+   font-size: 3.5rem;
+   font-weight: 800;
+   margin-bottom: 1.5rem;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+ }
+
+ .hero-content p {
+   font-size: 1.25rem;
+   max-width: 800px;
+   margin: 0 auto 2rem;
+ }
+
+ .btn-primary {
+   background-color: var(--secondary-color);
+   border-color: var(--secondary-color);
+   padding: 0.75rem 2rem;
+   font-weight: 600;
+   border-radius: 30px;
+   transition: all 0.3s;
+ }
+
+ .btn-primary:hover {
+   background-color: #e09410;
+   border-color: #e09410;
+   transform: translateY(-3px);
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+ }
+
+ /* Room Section */
+ #rooms {
+   padding: 5rem 0;
+   background-color: var(--light-bg);
+ }
+
+ .section-title {
+   text-align: center;
+   margin-bottom: 3rem;
+ }
+
+ .section-title h2 {
+   font-weight: 700;
+   position: relative;
+   display: inline-block;
+   padding-bottom: 15px;
+ }
+
+ .section-title h2:after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 70px;
+   height: 3px;
+   background-color: var(--secondary-color);
+ }
+
+ .filter-container {
+   display: flex;
+   justify-content: flex-end;
+   margin-bottom: 2rem;
+ }
+
+ .room-card {
+   border: none;
+   border-radius: 10px;
+   overflow: hidden;
+   transition: transform 0.3s, box-shadow 0.3s;
+   margin-bottom: 30px;
+   height: 100%;
+ }
+
+ .room-card:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+ }
+
+ .room-img {
+   height: 200px;
+   object-fit: cover;
+ }
+
+ .room-price {
+   font-weight: 700;
+   color: var(--primary-color);
+ }
+
+ .feature-icon {
+   margin-right: 8px;
+   color: var(--secondary-color);
+ }
+
+ /* About Section */
+ #about {
+   padding: 5rem 0;
+ }
+
+ .about-img {
+   border-radius: 10px;
+   overflow: hidden;
+ }
+
+ /* Contact Section */
+ #contact {
+   padding: 5rem 0;
+   background-color: var(--light-bg);
+ }
+
+ .contact-info-item {
+   display: flex;
+   align-items: center;
+   margin-bottom: 1.5rem;
+ }
+
+ .contact-icon {
+   font-size: 1.5rem;
+   color: var(--secondary-color);
+   margin-right: 1rem;
+ }
+
+ .form-control:focus {
+   border-color: var(--secondary-color);
+   box-shadow: 0 0 0 0.25rem rgba(245, 166, 35, 0.25);
+ }
+
+ /* Terms Section */
+ #terms {
+   padding: 5rem 0;
+ }
+
+ /* Footer */
+ footer {
+   background-color: var(--primary-color);
+   color: var(--white);
+   padding: 3rem 0 1rem;
+ }
+
+ .footer-heading {
+   font-size: 1.3rem;
+   font-weight: 600;
+   margin-bottom: 1.5rem;
+ }
+
+ .footer-link {
+   color: #ccc;
+   margin-bottom: 0.8rem;
+   display: block;
+   transition: color 0.3s;
+ }
+
+ .footer-link:hover {
+   color: var(--secondary-color);
+   text-decoration: none;
+ }
+
+ .social-links a {
+   color: var(--white);
+   margin-right: 15px;
+   font-size: 1.2rem;
+   transition: color 0.3s;
+ }
+
+ .social-links a:hover {
+   color: var(--secondary-color);
+ }
+
+ .copyright {
+   margin-top: 2rem;
+   padding-top: 1rem;
+   border-top: 1px solid rgba(255, 255, 255, 0.1);
+ }
+
+ /* Authentication Forms */
+ .auth-container {
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   background-color: var(--light-bg);
+   padding: 2rem 0;
+ }
+
+ .auth-form {
+   background-color: var(--white);
+   border-radius: 10px;
+   padding: 2rem;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+ }
+
+ .auth-heading {
+   text-align: center;
+   margin-bottom: 2rem;
+ }
+
+ /* Booking Modal */
+
+ #bookingModal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.6);
+   display: none;
+   justify-content: center;
+   align-items: center;
+   z-index: 9999;
+ }
+
+ .modal-dialog {
+   background: white;
+   border-radius: 8px;
+   padding: 20px;
+ }
+
+ .btn-close {
+   background: none;
+   border: none;
+   font-size: 1.5rem;
+   float: right;
+ }
+
+ .modal-content {
+   border-radius: 10px;
+   border: none;
+   overflow: hidden;
+ }
+
+ .modal-header {
+   background-color: var(--primary-color);
+   color: var(--white);
+   border-bottom: none;
+   padding: 1.5rem;
+ }
+
+ .modal-body {
+   padding: 2rem;
+ }
+
+ .modal-footer {
+   border-top: none;
+   padding: 1rem 2rem 2rem;
+ }
+
+ /* Responsive Styles */
+ @media (max-width: 992px) {
+   .hero-content h1 {
+     font-size: 2.5rem;
+   }
+ }
+
+ @media (max-width: 768px) {
+   .hero-content h1 {
+     font-size: 2rem;
+   }
+
+   .section-padding {
+     padding: 3rem 0;
+   }
+ }
+
+ @media (max-width: 576px) {
+   .hero-content h1 {
+     font-size: 1.8rem;
+   }
+ }
+
+ /* Pages */
+ .page {
+   display: none;
+ }
+
+ .page.active {
+   display: block;
+ }
+
+ /* Toast Notification */
+ .toast-container {
+   position: fixed;
+   top: 20px;
+   right: 20px;
+   z-index: 1060;
+ }
+
+ /* Animation */
+ @keyframes fadeIn {
+   from {
+     opacity: 0;
+   }
+
+   to {
+     opacity: 1;
+   }
+ }
+
+ .fade-in {
+   animation: fadeIn 0.5s;
+ }

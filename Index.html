@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aruna Hotel | Luxury Accommodations</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="Style.css">
+
+  <style id="app-style">
+    :root {
+      --primary-color: #1a237e;
+      --secondary-color: #f5a623;
+      --text-color: #333;
+      --light-bg: #f5f5f5;
+      --dark-bg: #121212;
+      --white: #ffffff;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="javascript:void(0)">Aruna Hotel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="javascript:void(0)" data-page="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" data-page="about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" data-page="contact">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" data-page="terms">Terms & Privacy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" data-page="login">Login/Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container"></div>
+
+  <!-- Home Page -->
+  <div id="homePage" class="page active">
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Experience Luxury and Comfort</h1>
+          <p>Welcome to Aruna Hotel, where exquisite amenities meet world-class service. Discover the perfect stay for
+            your next adventure or business trip.</p>
+          <button id="ctaButton" class="btn btn-primary btn-lg">Login or Create Account</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Rooms</h2>
+          <p>Choose from our selection of carefully designed rooms</p>
+        </div>
+
+        <div class="filter-container">
+          <div class="form-group">
+            <select id="roomFilter" class="form-select">
+              <option value="all">All Room Types</option>
+              <option value="standard">Standard</option>
+              <option value="deluxe">Deluxe</option>
+              <option value="suite">Suite</option>
+              <option value="presidential">Presidential</option>
+              <option value="twin standard">Twin Standard</option>
+              <option value="deluxe family">Deluxe Family </option>
+            </select>
+          </div>
+        </div>
+
+        <div id="roomsList" class="row">
+          <!-- Rooms will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- About Us Page -->
+  <div id="aboutPage" class="page">
+    <div class="container py-5 mt-5">
+      <div class="row py-4">
+        <div class="col-12">
+          <h1 class="text-center mb-5">About Aruna Hotel</h1>
+        </div>
+      </div>
+
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="about-img">
+            <img src="images/Hotel img.jpg" alt="Hotel Exterior" class="img-fluid rounded">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h3>Our Story</h3>
+          <p>Founded in 2010, Aruna Hotel has established itself as a premier destination for travelers seeking comfort,
+            luxury, and exceptional service. What began as a modest establishment has grown into a renowned hotel chain
+            with properties across major cities.</p>
+          <p>Our commitment to excellence and attention to detail has earned us numerous accolades in the hospitality
+            industry, and we continue to innovate and improve our services to exceed guest expectations.</p>
+        </div>
+      </div>
+
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+          <div class="about-img">
+            <img src="images/Hotel pool.jpg" alt="Hotel Pool" class="img-fluid rounded">
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <h3>Facilities & Amenities</h3>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check feature-icon"></i> 24/7 Room Service</li>
+            <li><i class="fas fa-check feature-icon"></i> Swimming Pool & Fitness Center</li>
+            <li><i class="fas fa-check feature-icon"></i> Gourmet Restaurant & Bar</li>
+            <li><i class="fas fa-check feature-icon"></i> Spa & Wellness Center</li>
+            <li><i class="fas fa-check feature-icon"></i> Conference & Event Spaces</li>
+            <li><i class="fas fa-check feature-icon"></i> Complimentary Wi-Fi</li>
+            <li><i class="fas fa-check feature-icon"></i> Airport Shuttle Service</li>
+            <li><i class="fas fa-check feature-icon"></i> Concierge Service</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="about-img">
+            <img src="images/Hotel-staff.avif" alt="Hotel Staff" class="img-fluid rounded">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h3>Our Team</h3>
+          <p>Behind every exceptional hotel experience is a dedicated team of professionals. Our staff members are
+            carefully selected and trained to uphold our standards of excellence and hospitality.</p>
+          <p>From our front desk personnel to our housekeeping team, every member plays a crucial role in ensuring your
+            stay with us is nothing short of perfect. We take pride in our diversity and the unique perspectives each
+            team member brings to creating memorable experiences for our guests.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Us Page -->
+  <div id="contactPage" class="page">
+    <div class="container py-5 mt-5">
+      <div class="row py-4">
+        <div class="col-12">
+          <h1 class="text-center mb-5">Contact Us</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h3>Get In Touch</h3>
+          <div class="contact-info-item">
+            <i class="fas fa-map-marker-alt contact-icon"></i>
+            <div>
+              <h5 class="mb-0">Address</h5>
+              <p>123 Hotel Street, Luxury Lane<br>NRT Center, 522616</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <i class="fas fa-phone-alt contact-icon"></i>
+            <div>
+              <h5 class="mb-0">Phone</h5>
+              <p>+91 7075146474</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <i class="fas fa-envelope contact-icon"></i>
+            <div>
+              <h5 class="mb-0">Email</h5>
+              <p>jagadeeshyadavalli3@gmail.com</p>
+            </div>
+          </div>
+
+          <!-- <div class="mt-4">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215249649045!2d-73.98784492393672!3d40.757978071518726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1684936932331!5m2!1sen!2sus"
+              width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div> -->
+
+          <div class="col-lg-6">
+            <div class="card shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="mb-4">Send Message</h3>
+                <form action="https://api.web3forms.com/submit" method="POST">
+
+                  <!-- Replace with your Access Key -->
+                  <input type="hidden" name="access_key" value="510fa530-f746-49de-bc1c-2fac0a2ab23f">
+
+                  <!-- ✅ You can also set your email subject like this (optional) -->
+                  <input type="hidden" name="subject" value="New Message from Contact Form">
+
+                  <form id="contactForm">
+                    <div class="mb-3">
+                      <label for="contactName" class="form-label">Full Name</label>
+                      <input type="text" class="form-control" id="contactName" required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="contactEmail" class="form-label">Email Address</label>
+                      <input type="email" class="form-control" id="contactEmail" name="name" required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="contactSubject" class="form-label">Subject</label>
+                      <input type="text" class="form-control" id="contactSubject" name="email" required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="contactMessage" class="form-label">Message</label>
+                      <textarea class="form-control" id="contactMessage" rows="5" name="comments" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                  </form>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Terms & Privacy Page -->
+  <div id="termsPage" class="page">
+    <div class="container py-5 mt-5">
+      <div class="row py-4">
+        <div class="col-12">
+          <h1 class="text-center mb-5">Terms & Conditions and Privacy Policy</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-5">
+            <div class="card-body p-4">
+              <h3>Terms & Conditions</h3>
+              <hr>
+
+              <h5>1. Reservations and Check-In</h5>
+              <p>1.1. A valid identification card is required at check-in.</p>
+              <p>1.2. Check-in time is 2:00 PM and check-out time is 12:00 PM.</p>
+              <p>1.3. Early check-in and late check-out are subject to availability and may incur additional charges.
+              </p>
+              <p>1.4. Reservations are confirmed upon receipt of a deposit or credit card guarantee.</p>
+
+              <h5>2. Cancellation Policy</h5>
+              <p>2.1. Cancellations made 48 hours or more before the scheduled arrival date will receive a full
+                refund.</p>
+              <p>2.2. Cancellations made less than 48 hours before the scheduled arrival date will be charged one
+                night's stay.</p>
+              <p>2.3. No-shows will be charged for the full reservation amount.</p>
+
+              <h5>3. Payment</h5>
+              <p>3.1. All rates are quoted in local currency and are subject to applicable taxes.</p>
+              <p>3.2. Accepted payment methods include major credit cards and cash.</p>
+              <p>3.3. A credit card is required upon check-in for incidental charges.</p>
+
+              <h5>4. Hotel Rules</h5>
+              <p>4.1. No smoking is allowed in the rooms or indoor public areas.</p>
+              <p>4.2. Pets are not allowed unless explicitly stated as a pet-friendly room.</p>
+              <p>4.3. The hotel is not responsible for loss of valuables. Use the in-room safe for storing valuables.
+              </p>
+              <p>4.4. Quiet hours are from 10:00 PM to 7:00 AM.</p>
+
+              <h3 class="mt-5">Privacy Policy</h3>
+              <hr>
+
+              <h5>1. Information We Collect</h5>
+              <p>1.1. Personal information such as name, address, email, phone number, and payment information.</p>
+              <p>1.2. Information about your stay including preferences, special requests, and feedback.</p>
+              <p>1.3. Information collected through cookies and similar technologies when you visit our website.</p>
+
+              <h5>2. How We Use Your Information</h5>
+              <p>2.1. To process your reservation and provide the services you requested.</p>
+              <p>2.2. To communicate with you about your stay or future promotions.</p>
+              <p>2.3. To improve our services and customer experience.</p>
+              <p>2.4. For legal and security purposes.</p>
+
+              <h5>3. Information Sharing</h5>
+              <p>3.1. We do not sell or rent your personal information to third parties.</p>
+              <p>3.2. We may share your information with service providers who help us deliver our services.</p>
+              <p>3.3. We may disclose information when required by law or to protect our rights and safety.</p>
+
+              <h5>4. Data Security</h5>
+              <p>4.1. We implement appropriate security measures to protect your personal information.</p>
+              <p>4.2. We retain your information only as long as necessary for the purposes outlined in this policy.
+              </p>
+
+              <h5>5. Your Rights</h5>
+              <p>5.1. You have the right to access, correct, and delete your personal information.</p>
+              <p>5.2. You can opt out of marketing communications at any time.</p>
+              <p>5.3. For any privacy-related inquiries, please contact us at privacy@arunahotel.com.</p>
+
+              <p class="mt-4">Last updated: January 1, 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login/Register Page -->
+  <div id="loginPage" class="page">
+    <div class="auth-container">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6">
+            <div class="auth-form">
+              <div class="text-center mb-4">
+                <a class="navbar-brand" href="javascript:void(0)">Aruna Hotel</a>
+                <h4 class="mt-3" id="authTitle">Login to Your Account</h4>
+              </div>
+
+              <!-- Login Form -->
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label for="loginEmail" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="loginEmail" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="loginPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="loginPassword" required>
+                </div>
+
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="rememberMe">
+                  <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+
+                <div class="text-center mt-3">
+                  <p>Don't have an account? <a href="javascript:void(0)" id="showRegister">Register here</a></p>
+                </div>
+              </form>
+
+              <!-- Register Form -->
+              <form id="registerForm" style="display: none;">
+                <div class="mb-3">
+                  <label for="registerName" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="registerName" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="registerEmail" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="registerEmail" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="registerAadhar" class="form-label">Aadhar Number</label>
+                  <input type="text" class="form-control" id="registerAadhar" required pattern="[0-9]{12}"
+                    title="Please enter a valid 12-digit Aadhar number">
+                </div>
+
+                <div class="mb-3">
+                  <label for="registerPhone" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="registerPhone" required pattern="[0-9]{10}"
+                    title="Please enter a valid 10-digit phone number">
+                </div>
+
+                <div class="mb-3">
+                  <label for="registerPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="registerPassword" required minlength="8">
+                </div>
+
+                <div class="mb-3">
+                  <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                  <input type="password" class="form-control" id="registerConfirmPassword" required minlength="8">
+                </div>
+
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                  <label class="form-check-label" for="agreeTerms">I agree to the <a href="javascript:void(0)"
+                      data-page="terms">Terms & Conditions</a></label>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+
+                <div class="text-center mt-3">
+                  <p>Already have an account? <a href="javascript:void(0)" id="showLogin">Login here</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Modal -->
+  <!-- <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookingModalLabel">Book Your Stay</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="bookingForm">
+              <input type="hidden" id="roomTypeId">
+              <div class="mb-3">
+                <label for="bookingName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="bookingName" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="bookingPhone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="bookingPhone" required pattern="[0-9]{10}"
+                  title="Please enter a valid 10-digit phone number">
+              </div>
+
+              <div class="mb-3">
+                <label for="bookingRoomType" class="form-label">Room Type</label>
+                <input type="text" class="form-control" id="bookingRoomType" readonly>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="bookingCheckIn" class="form-label">Check-In Date</label>
+                  <input type="text" class="form-control" id="bookingCheckIn" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="bookingCheckOut" class="form-label">Check-Out Date</label>
+                  <input type="text" class="form-control" id="bookingCheckOut" required>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="bookingGuests" class="form-label">Number of Guests</label>
+                <select class="form-select" id="bookingGuests" required>
+                  <option value="">Select number of guests</option>
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5">5 Guests</option>
+                  <option value="6">6 Guests</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="bookingSpecialRequests" class="form-label">Special Requests (Optional)</label>
+                <textarea class="form-control" id="bookingSpecialRequests" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="submitBooking">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  <!-- 
+  <div class="modal fade" id="bookingModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="bookingForm">
+          <input type="hidden" id="roomTypeId" />
+          <div class="modal-header">
+            <h5 class="modal-title">Book a Room</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="bookingName" class="form-label">Full Name</label>
+              <input type="text" id="bookingName" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="bookingPhone" class="form-label">Phone</label>
+              <input type="text" id="bookingPhone" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="bookingRoomType" class="form-label">Room Type</label>
+              <input type="text" id="bookingRoomType" class="form-control" readonly />
+            </div>
+            <div class="mb-3">
+              <label for="bookingCheckIn" class="form-label">Check-in</label>
+              <input type="text" id="bookingCheckIn" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="bookingCheckOut" class="form-label">Check-out</label>
+              <input type="text" id="bookingCheckOut" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="bookingGuests" class="form-label">Guests</label>
+              <input type="number" id="bookingGuests" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="bookingSpecialRequests" class="form-label">Special Requests</label>
+              <textarea id="bookingSpecialRequests" class="form-control"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="submitBooking">Confirm Booking</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> -->
+
+  <div id="bookingModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Book a Room</h5>
+          <button type="button" class="btn-close" id="closeModal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="bookingForm">
+            <input type="text" id="bookingName" class="form-control mb-3" placeholder="Full Name" required>
+            <input type="email" id="bookingEmail" class="form-control mb-3" placeholder="Email" required>
+            <input type="tel" id="bookingPhone" class="form-control mb-3" placeholder="Phone Number" required>
+            <input type="date" id="bookingCheckIn" class="form-control mb-3" required>
+            <input type="date" id="bookingCheckOut" class="form-control mb-3" required>
+            <input type="number" id="bookingGuests" class="form-control mb-3" placeholder="Number of Guests" required>
+            <select id="paymentMethod" class="form-control mb-3" required>
+              <option value="">Select Payment Method</option>
+              <option value="online">Online</option>
+              <option value="cash">Cash</option>
+            </select>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" id="closeModalFooter">Cancel</button>
+          <button class="btn btn-primary" type="submit" form="bookingForm">Confirm Booking</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 class="footer-heading">About Aruna Hotel</h5>
+          <p>Experience luxury and comfort at Aruna Hotel. Our dedicated team ensures your stay is memorable and
+            pleasant.</p>
+          <div class="social-links mt-4">
+            <a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
+            <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
+            <a href="javascript:void(0)"><i class="fab fa-instagram"></i></a>
+            <a href="javascript:void(0)"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-2 col-6 mb-4 mb-md-0">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a class="footer-link" href="javascript:void(0)" data-page="home">Home</a></li>
+            <li><a class="footer-link" href="javascript:void(0)" data-page="about">About Us</a></li>
+            <li><a class="footer-link" href="javascript:void(0)" data-page="contact">Contact Us</a></li>
+            <li><a class="footer-link" href="javascript:void(0)" data-page="terms">Terms & Privacy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 col-6 mb-4 mb-md-0">
+          <h5 class="footer-heading">Services</h5>
+          <ul class="list-unstyled">
+            <li><a class="footer-link" href="javascript:void(0)">Accommodation</a></li>
+            <li><a class="footer-link" href="javascript:void(0)">Restaurant</a></li>
+            <li><a class="footer-link" href="javascript:void(0)">Spa & Wellness</a></li>
+            <li><a class="footer-link" href="javascript:void(0)">Events</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <h5 class="footer-heading">Contact Us</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Hotel Street, Luxury Lane, NRT Center,
+              522616</li>
+            <li class="mb-2"><i class="fas fa-phone-alt me-2"></i> +91 7075146474</li>
+            <li class="mb-2"><i class="fas fa-envelope me-2"></i> jagadeeshyadavalli3@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center copyright">
+        <p>&copy; 2025 Aruna Hotel. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <!-- <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content rounded-3">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookingModalLabel">Book Room</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>Room:</strong> <span id="modalRoomName"></span></p>
+            <p><strong>Price per night:</strong> ₹<span id="modalRoomPrice"></span></p>
+            <p>Thank you for choosing Aruna Hotel! Complete booking on the next page.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="booking.html" class="btn btn-primary">Proceed to Book</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  <!-- Bootstrap Bundle with Popper (required for navbar toggle) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="Script.js"></script>
+</body>
+
+</html>
